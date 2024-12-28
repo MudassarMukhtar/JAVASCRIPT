@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document object model</title>
+    <style>
+        *{
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- ACCESS ELEMENTS 
+
+     1-ById
+     2-ByClassName
+     3-ByTagName
+    
+    ACCESS ALL WITH SINGLE 
+    
+     4-querySelector(.class/#id/tag)=> access only first element 
+     5-querySelectorAll(.class/#id/tag)=>access all elements those matchs 
+     -->
+
+
+     <!-- INSERT NEW ELEMENTS 
+     1-node.AppendChild (node/string)  //add at end of the element
+     2-node.PrependChild (node/string) // add at end of the element
+     3-node.Before (node/string)       //add before
+     4-node.After (node/string)        //add after
+     5-node.Replacewith (node/string) //
+
+
+    INSERT AT SPECIFIC PLACE
+
+     insertAjacentElement(postion,newelement)//postions are => beforeend,afterend,beforebegin,afterbegin
+     
+    -->
+
+    <!-- CREATE NEW ELEMENTS
+    document.createElement('<h1>');//H1 heading will created in document (means in body)
+    -->
+
+    <!-- UPDATE ANY EXISTING ELEMENT 
+    h1.innerHTML="<p>hello<p>"//inside of existing element
+    h1.outerHTML=
+    h1.innerText="text"//will add text inside element
+    h1.innerContent='content' will add content inside
+    
+    -->
+
+    <div class="bg-black">
+        <h1 id="title" class="heading">Dom learning</h1>
+        <p>onsectetur adipisicing elit. Magnam obcaecati minima, quibusdam, exercitationem fugiat inventore quasi quae eaque culpa numquam hic odit dicta officiis! Quis porro autem cumque est quibusdam.</p>
+        <input type="text">
+        <ul>
+            <li>one</li>
+            <li>two</li>
+            <li>three</li>
+            <li>four</li>
+        </ul>
+    </div>
+    <script>
+        document.body.getElementsByClassName('heading')
+        document.getElementById('title')
+        document.getElementsByTagName('li')
+
+        document.querySelector('.heading')
+        document.querySelector('#title')
+        document.querySelector('p')
+
+        document.querySelectorAll(li)
+
+        
+    </script>
+</body>
+</html>
