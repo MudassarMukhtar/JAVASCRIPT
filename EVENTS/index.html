@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+    <style>
+        body {
+            background-color: rgb(97, 95, 95);
+            color: white;
+        }
+
+        .main {
+            display: flex;
+        }
+
+        #li1 {
+            background-color: rgb(118, 76, 22);
+            height: 100px;
+            width: 100px;
+        }
+
+        #li2 {
+            background-color: rgb(85, 41, 133);
+            height: 100px;
+            width: 100px;
+        }
+
+        #li3 {
+            background-color: rgb(23, 162, 21);
+            height: 100px;
+            width: 100px;
+        }
+
+        #li4 {
+            background-color: rgb(139, 21, 82);
+            height: 100px;
+            width: 100px;
+        }
+        a{
+            color:white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Amazing Divs</h2>
+    <div class="main">
+        <!-- 
+        EVENT LISTNER
+        WAY-1
+        //onclick="alert('div1')"
+         <div id="div1"  onclick="alert('div1')">1</div> 
+        -->
+    
+       <ul id="main-ul">
+        <li id="li1">1</li>
+        <li id="li2">2</li>
+        <li id="li3">3</li>
+        <li id="li4">
+            <a href="www.google.com" id="google">Google</a>
+        </li>
+       </ul>
+    </div>
+
+    <script>
+
+        // EVENT LISTNER
+        // WAY-2
+        //  document.getElementById('div1').onclick=function(){
+        //     alert('div 1')
+        //  }
+
+
+        // EVENT LISTNER
+        // WAY-3
+        // AND BEST APPROACH
+
+        // document.getElementById('div1').addEventListener('click',()=>{
+        //     alert('clicked again ')
+        // },false)
+
+
+    // EVENTS
+
+    // type ,timestamp,defaultpreventd
+    // target ,toElement ,srcElement ,currentTarget,
+    // clientX,clientY,ScreenX,ScreenY
+    // altKey ,ctrlKey ,shiftKey,keyCode
+
+
+    //ADDEVENTLISTENER('EVENET',FUNCTION(){})
+    //BUBBLING (BY DEFAULT(FALSE))
+    //CAPTURING(BY ADDING TRUE)
+
+    // document.getElementById('main-ul').addEventListener('click',function(e){
+    //     console.log("clicked inside ul");
+    // },false)
+    
+    // //stopPropagation()
+
+    // document.getElementById('li2').addEventListener('click',function(e){
+    //     console.log("clicked inside li2");
+    //     e.stopPropagation();  //stopPropagation()
+    // },true)
+    
+    // //PreventDafault()//it will stop actual purpose of element
+
+    // document.getElementById('google').addEventListener('click',(e)=>{
+    //     e.preventDefault()//PreventDafault()
+    //     console.log('clicked on link')
+    // })
+
+    document.querySelector('#main-ul').addEventListener
+    ('click',function(e){
+         e.target.remove(); 
+         console.log(e.target)        
+    })
+    </script>
+</body>
+
+</html>
