@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <!-- 
+    setTimeOut(handler,2000)
+    
+    clearTimeout()
+
+    setInterval()
+    clearInerval()
+     -->
+
+     <h1></h1>
+    <button>click me!</button>
+
+    <input type="Button" value="start" id="start">
+
+
+    <script>
+  
+   const sayHi= function () {
+   document.querySelector('h1').innerHTML="hello"
+         
+   }
+ const changeMe=setTimeout(sayHi, 2000);
+
+ document.querySelector('Button').
+ addEventListener('click',function(){
+    clearTimeout(changeMe);
+    console.log("stopped")
+ })
+
+ //  setInterval(() => {
+//     console.log("set interval")
+//  }, 3000);
+ 
+ const saydate=function (str) {
+
+        console.log(`${str}`)
+    
+ }
+
+
+ const intervalId=setInterval(saydate, 2000,'setinterval function is here');
+
+ clearInterval(intervalId)
+
+
+
+
+    </script>
+</body>
+</html>
