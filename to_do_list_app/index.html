@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do LIST app</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="todo-app">
+            <h2>To Do List<img src="to-do-list.png" alt=""></h2>
+            <div class="row">
+                <input type="text" id="input" placeholder="add your text">
+                <button id="btn">Add</button>
+            </div>
+            <ul id="ul">
+                <!-- <li class="checked">Task1</li>
+                <li>Task2</li>
+                <li>Task3</li>  -->
+            </ul>
+        </div>
+    </div>
+
+
+    <script>
+       const input=document.getElementById('input')
+       const ul= document.getElementById('ul');
+       const button= document.getElementById('btn');
+       
+       button.addEventListener('click',addtask)
+       function addtask(){
+        if(input.value===''){
+            alert('Enter some text please')
+        }else{
+           const li= document.createElement('li');
+           li.innerHTML=input.value;
+           ul.appendChild(li)
+           let span=document.createElement('span');
+           span.innerHTML=('\u00d7')
+           li.appendChild(span)
+        }   
+         ;
+        input.value= "";
+        saveData()   ;
+       }
+
+       ul.addEventListener('click',function(e){
+        if(e.target.tagName=="LI"){
+            e.target.classList.toggle("checked");
+            saveData()   ;
+        }else if(e.target.tagName==="SPAN"){
+            e.target.parentElement.remove();
+            saveData()   ;
+        }
+       },false);
+
+       function saveData(){
+        localStorage.setItem("data",ul.innerHTML);
+       }
+     
+      function showTask(){
+        ul.innerHTML=localStorage.getItem("data");
+      }
+      showTask();
+       
+    </script>
+</body>
+
+</html>
